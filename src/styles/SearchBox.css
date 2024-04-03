@@ -1,0 +1,19 @@
+.searchbox{
+    margin: 40px auto;
+    padding: 10px 20px;
+    background:#7B7B7B;
+    border-radius: 90px;
+    display: flex;
+    gap: 20px;
+}
+.searchbox input{
+    background-color: transparent;
+    border: none;
+    width: 90%;
+    outline: none;
+    color: white;
+}
+.searchbox img{
+    width: 20.31px;
+    height: 20.31px;
+}

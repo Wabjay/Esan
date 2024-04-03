@@ -1,0 +1,21 @@
+.home_container{
+    width: 100%;
+    /* max-width: 425px; */
+       
+    }
+
+    .home_container > div{
+        width: 100%;
+        max-width: 425px;
+        margin: 0 auto;
+        padding: 100px 24px;
+    }
+
+.explore_text{
+    color: #FEFEFE;
+    display: block;
+
+}
+.explore_text span{
+    display: block;
+}

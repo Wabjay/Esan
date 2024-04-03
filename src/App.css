@@ -1,0 +1,108 @@
+:root{
+
+  --white: #FFFFFF;
+  
+  --grey-900: #121416;
+  --grey-800: #24282C;
+  --grey-700: #373B40;
+  --grey-600: #50555B;
+  --grey-500: #696F76;
+  --grey-400: #81878E;
+  --grey-300: #9EA3A9;
+  --grey-200: #B4B8BD;
+  --grey-100: #C7CACE;
+  --grey-50: #DCDEE1;
+  --grey-10: #F2F3F5;
+  
+
+  --blue-900: #061B32;
+  --blue-800: #0D2845;
+  --blue-700: #17406E;
+  --blue-600: #214973;
+  --blue-500: #315D8B;
+  --blue-400: #4676A8;
+  --blue-300: #648DBA;
+  --blue-200: #85A7CC;
+  --blue-100: #A9C2DD;
+  --blue-50: #CCDBEB;
+  --blue-10: #F1F5F9;
+
+  }
+  *{
+    /* margin: 0; */
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Libre Franklin' !important
+  }
+
+  /* p{
+    margin-bottom: 0;
+  } */
+
+.faq_btn {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 22px;
+  text-align: center;
+  letter-spacing: 1px;
+  border-radius: 8px;
+  color: var(--white);
+  width: 181px;
+height: 48px;
+background-color: var(--blue-500);
+border: 0.5px solid var(--blue-500);
+border-radius: 8px;
+}
+.faq_btn:hover, .search_btn:hover{
+  background-color: var(--blue-600);
+}
+.suggestionView{
+  color: var(--grey-600);
+}
+
+
+/* Login stylings */
+.loginPage{
+  text-align: center;
+margin: 40px auto;
+width: 100vw;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+.login {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login__container {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #dcdcdc;
+  padding: 30px;
+}
+.login__textBox {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.login__btn {
+  padding: 10px;
+  font-size: 18px;
+  margin-bottom: 10px;
+  border: none;
+  color: white;
+  background-color: black;
+}
+.login__google {
+  background-color: #4285f4;
+}
+.login div {
+  margin-top: 7px;
+}
+

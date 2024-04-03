@@ -1,0 +1,252 @@
+.backbutton{
+    background-color: white;
+    width: 60px;
+    height: 80px;
+    padding: 25px 15px;
+    margin-bottom: 40px;
+    border-radius: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* .bookList, */
+.blogPost {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 16px;
+    /* padding-bottom: 40px; */
+}
+    
+.bookList{
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+.blogPost {
+    max-width: 757px;
+    padding: 40px 16px;
+}
+.Bookspinner{
+    margin: 10% auto;
+    width: fit-content;
+}
+
+.bookList_banner {
+    grid-column: 1/4;
+    background-size: contain;
+    /* margin-bottom: 40px; */
+    padding: 16px;
+    /* height: 100vh; */
+
+}
+    .bookList_banner > div{
+    /* max-width: 1440px;
+    padding: 40px; */
+    width: 100%;
+  max-width: 425px;
+  margin: 0 auto;
+}
+
+.bookList_banner p {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -1px;
+    text-align: left;
+    color: var(--white);
+    width: 100%;
+    max-width: 282px;
+}
+
+.bookCard, .tabs {
+    width: 100%;
+    margin: 0 0 32px;
+    padding: 12px 0;
+    display: flex;
+    justify-content: space-between;
+color: white;
+}
+.tabs{
+    margin: 0;
+}
+.tabs p, p.book{
+    width: fit-content;
+    font-weight: 400;
+    color: #FEFEFE;
+    font-size: 14px;
+    padding: 4px 12px;
+    border-radius: 90px;
+    background-color: #7B7B7B;
+}
+
+.tabs p:hover, .tabs .active{
+    background-color: #E69800;
+}
+
+p.book{
+width: 145px;
+height: 43px;
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.pdfBorder{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #E8E8E8;
+}
+.blogContent p img{
+    width: 100%;
+    margin: 0 auto;
+}
+.blogContentText{
+    font-size: 14px;
+    line-height: 28px;
+}
+.bookList_img {
+    width: 100%;
+    height: 342px;
+}
+
+.postImg {
+    width: 100%;
+    height: 342px;
+        display: block;
+        margin:20px auto;
+}
+.blogText{
+    width: 100%;
+        display: block;
+        margin:20px auto;
+}
+
+.date {
+    margin-top: 24px;
+    margin-bottom: 0;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-600);
+}
+
+.courseTitle {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 28px;
+    letter-spacing: -1px;
+    color: var(--grey-800);
+    margin-top: 8px;
+    margin-bottom: 0;
+}
+
+/* .book {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-600);
+    margin-top: 4px;
+    margin-bottom: 0;
+
+} */
+
+.post_title {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: var(--grey-800);
+    margin-top: 32px;
+    width: 100%;
+}
+
+/* Admin Post page */
+.createButton{
+    width: 150px;
+    margin: 40px 16px;
+    /* margin: 0 auto; */
+}
+
+/* .adminDelete{
+    display: flex;
+    justify-content: space-between;
+    align-items: self-end;
+} */
+.adminDelete span{
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--grey-800);
+}
+.adminDelete .level{
+    font-style: bold;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+    color: var(--grey-800);
+}
+.adminDelete p{
+    font-style: bold;
+    /* font-weight: 700; */
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-800);
+}
+
+.AdminBlog{
+    margin-top: 24px;
+    /* text-align: right; */
+}
+.adminButtons button{
+    height: 40px;
+    }
+
+.deletePost > button{
+    color: #970E0E;
+    background: #FFFFFF;
+border: 1px solid#970E0E;
+border-radius: 8px !important;
+}
+.deletePost span{
+    font-size: 18px;
+}
+.deletePost > button:hover{
+    /* margin-right: 16px; */
+    /* border: solid 1px var(--grey-500); */
+    background-color: #FFE8E8;
+}
+.cpContainer{
+    margin: 24px 16px;
+    /* border: solid var(--blue-10) 0.5px; */
+    padding: 16px;
+}
+.inputGp{
+    margin-bottom: 24px;
+}
+.inputGp .title{
+    width: 100%;
+    border-radius: 5px;
+    border: 0.5px solid var(--grey-200);
+    height: 32px;
+    padding-left: 16px;
+    margin-bottom: 24px;
+}
+.inputGp .form-control{
+    margin-bottom: 24px;
+}
+
+.cpContainer .ql-editor{
+    height: 250px;
+    max-height: fit-content;
+}
+

@@ -1,0 +1,74 @@
+.general_cards{
+    display: grid;
+    grid-template-columns: 133px 133px;
+    grid-auto-rows: min-content; 
+    row-gap: 24px;
+    width: 100%;
+    max-width: 306px;
+    margin: 0 auto;
+    padding: 20px 0 100px;
+    justify-content: space-between;
+    background-color: #1E1E1E;
+}
+
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.card{
+    position: relative;
+    width: 133px;
+    height: 178px;
+    border-radius: 24px;
+}
+
+.card:nth-child(even){
+    
+    height: 208px;
+}
+
+.card_image{
+    border-radius: 24px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    /* height: 178px; */
+}
+
+.card_title{
+    color: white;
+}
+.card_title span{
+    display: block;
+}
+.bottom_content{
+    position: absolute;
+    bottom: 5px;
+    padding: 0 8px;
+    z-index: 3;
+    width: 100%;
+}
+.buttons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.learn{
+background-color: #E8E8E8;
+padding: 7px 10px;
+border-radius: 58.54px;
+font-size: 8px;
+height: fit-content;
+}
+.hammer{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 100%;
+    background-color: #E8E8E8;
+}

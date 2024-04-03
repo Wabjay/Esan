@@ -1,0 +1,38 @@
+
+@font-face {
+  font-family: "Space";
+  src: local("Space"),
+   url("./components/font/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+  font-weight: normal;
+  font-display: swap
+ }
+
+ 
+ 
+body {
+  margin: 0;
+  font-family: "Space", BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  line-height: 0;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+body {
+  margin: 0 auto;
+  
+  font-family: 'Space', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: #181818; */
+
+}
+
+
+

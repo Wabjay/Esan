@@ -1,0 +1,375 @@
+:root {
+    --border-radius: 4px;
+}
+
+.container {
+    background: white;
+}
+
+.add_book{
+    margin: 40px 0;
+}
+
+.createButton{
+    font-weight: 700;
+    font-size: 16px;
+    color: #FFFFFF;
+    padding: 8px 16px;
+    border: none;
+    background-color: var(--blue-500);
+}
+
+.formCard {
+    padding: 24px 16px;
+}
+
+.formHeader {
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    letter-spacing: -1px;
+    color: var(--grey-800);
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto 24px;
+}
+
+.formCard .ant-row {
+    display: block;
+}
+
+.ant-progress-success-bg,
+.ant-progress-bg {
+    background-color: var(--blue-500) !important;
+}
+
+.ant-form-item-label>label.ant-form-item-required:not(.ant-form-item-required-mark-optional)::before {
+    display: none !important;
+}
+
+.ant-form-item-label>label::after {
+    content: none !important;
+}
+
+.formCard .ant-form-item-label>label {
+    font-family: 'Libre Franklin';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    height: auto;
+    margin-bottom: 8px;
+}
+
+.formCard .ant-input {
+    font-size: 16px;
+    padding: 12px 16px;
+    border: none;
+}
+.formCard .ant-input[disabled] {
+    color: var(--grey-400);
+    background-color: #F2F3F5;
+    border-color: inherit;
+    box-shadow: none;
+    cursor: not-allowed;
+    opacity: 1;
+}
+
+.formCard .ant-form-item-control-input-content {
+    border: 0.5px solid var(--grey-300);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.formCard .radioButton .ant-form-item-control-input-content {
+    border: none;
+}
+
+/* FORM RADIO BUTTON */
+.formCard .ant-radio{
+    top: 0;
+}
+.formCard .ant-radio-checked .ant-radio-inner {
+    border-color: var(--blue-500) !important;
+}
+
+.formCard .ant-radio-inner::after {
+    background-color: var(--blue-500) !important;
+}
+
+.formCard .ant-radio-inner {
+    border-color: var(--grey-300);
+    width: 24px;
+    height: 24px;
+}
+
+.formCard .ant-radio-group {
+    width: 100%;
+}
+
+/* FORM RADIO BUTTON */
+
+
+
+.formCard .ant-radio-wrapper {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    height: 48px;
+    background: var(--white);
+    border: 0.5px solid var(--grey-200);
+    border-radius: 8px;
+    padding: 8px 16px;
+    width: 100%;
+    margin-top: 24px;
+}
+
+.formCard .ant-radio-wrapper-checked {
+    background: var(--blue-10);
+}
+
+.radio_button>.ant-form label {
+    font-size: 14px;
+    border: solid 0.5px grey;
+    width: 150px;
+    padding: 12px 16px;
+    margin-top: 8px;
+}
+
+.formCard span.ant-radio+* {
+    padding-right: 8px;
+    padding-left: 8px;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--grey-800)
+}
+
+.formCard .ant-btn-primary {
+    width: 100%;
+    height: 48px;
+    background: var(--blue-500);
+    border: 0.5px solid var(--blue-50);
+    border-radius: 8px;
+}
+
+.formCard .ant-btn {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    margin-top: 16px;
+}
+
+label,
+input {
+    color: var(--text-color);
+}
+
+.form_input input {
+    background: #FFFFFF;
+    border: 0.5px solid var(--grey-300);
+    border-radius: 8px;
+    width: 100%;
+    height: 48px;
+}
+
+
+.formRow {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+}
+
+
+
+button.back {
+    margin: 24px 0;
+    /* // padding: 0.3rem; */
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 22px;
+    /* text-align: center; */
+    color: var(--grey-900);
+    background: #FFFFFF;
+    border: 0.5px solid var(--grey-200);
+    border-radius: 8px;
+    width: 96px;
+    height: 40px;
+}
+button.back:hover{
+    background-color: var(--grey-10);
+}
+
+button.back img {
+    width: 24px;
+    height: 24px;
+}
+
+button.back p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.input-error {
+    border-color: var(--error-color);
+}
+
+.error {
+    color: var(--error-color);
+    font-size: 6px;
+    margin-top: 0.3rem;
+}
+
+.disabled-btn {
+    cursor: not-allowed;
+    background: rgba(var(--grey-400), 0.8);
+}
+
+input[type="checkbox"] {
+    margin-right: 0.7rem;
+}
+
+.steps {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: var(--text-color);
+    font-size: 1.2rem;
+}
+
+.errorText {
+    color: var(--error-color);
+    font-size: 1.2rem;
+    margin-top: 0.4rem;
+    display: inline-block;
+}
+
+.hideForm {
+    display: none;
+}
+
+.showForm {
+    display: block;
+    margin: 24px auto;
+}
+
+
+/* Last Form Page */
+.congrats {
+    max-width: 422px;
+    margin: 80px auto;
+    text-align: center;
+}
+
+.congratsImg {
+    margin: 0 auto 42px;
+    width: 106px;
+    height: 106px;
+}
+
+.CongratsText {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: var(--grey-600);
+
+}
+
+.congrats .CongratsBtn {
+    max-width: 362px;
+    height: 48px;
+    margin-top: 40px;
+}
+
+@media (min-width: 576px) {
+
+    /* .container {
+    } */
+    .formCard {
+        padding: 16px 24px;
+    }
+
+    .showForm {
+        width: 344px;
+    }
+
+    .formHeader {
+        max-width: fit-content;
+        font-size: 32px;
+        line-height: 39px;
+    }
+
+    .form_input input,
+    .formCard .ant-btn-primary,
+    .formCard .ant-radio-wrapper {
+        max-width: 344px;
+        height: 48px;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    /* .container  */
+
+    .formCard {
+        padding: 16px 32px;
+    }
+
+    .showForm {
+        width: 468px;
+        margin-bottom: 120px;
+    }
+
+    .formHeader {
+        font-size: 40px;
+        line-height: 48px;
+    }
+
+    .form_input input,
+    .formCard .ant-btn-primary,
+    .formCard .ant-radio-wrapper {
+        max-width: 468px;
+        height: 48px;
+    }
+
+    .CongratsText {
+        font-size: 20px;
+        line-height: 28px;
+    }
+    .congrats .CongratsBtn {
+        max-width: 362px;
+    }
+
+}
+
+@media (min-width: 1280px) {
+    .container .formCard {
+        padding: 16px 144px;
+        max-width: 1440px;
+        margin: 0 auto;
+    }
+
+    .showForm {
+        width: 558px;
+    }
+
+    .form_input input,
+    .formCard .ant-btn-primary,
+    .formCard .ant-radio-wrapper {
+        max-width: 560px;
+        height: 48px;
+    }
+    .congrats .CongratsBtn {
+        max-width: 362px;
+    }
+
+}

@@ -1,0 +1,19 @@
+.onboarding_container{
+    width: 100%;
+    max-width: 425px;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 100px 24px;
+    background-color: #1E1E1E;
+}
+
+.onboarding_container .onboarding-image{
+    width: 70%;
+    position: absolute;
+    bottom: 10%;
+    left: 15%;
+}
+
+.onboarding_container .started{
+text-align: center;
+}
