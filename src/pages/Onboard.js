@@ -15,8 +15,9 @@ const Onboard = () => {
   const navigate = useNavigate();
 
   const nav =()=>{
-    navigate('/home')
-  sessionStorage.setItem('onboard', true)
+    console.log('first')
+    // navigate('/home')
+  // sessionStorage.setItem('onboard', true)
   }
 
   return (
@@ -28,9 +29,9 @@ const Onboard = () => {
       <div className="started">
         <p className="napher">NAPHER-SD HKSHE</p>
         <p  className="napher_small">Learn with plaesure with us. wherever you are!</p>
-        {/* <Link to="/home"> */}
+        <Link to="/home">
           <button className="center" onClick={nav}>GET STARTED</button>
-          {/* </Link> */}
+          </Link>
   
 
         

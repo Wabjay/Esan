@@ -18,11 +18,11 @@ function App() {
   const [user, error] = useAuthState(auth);
   const [onboard, setOnboard] = useState(false)
 
-  useEffect(() => {
-    const onboard = sessionStorage.getItem('onboard')
-    setOnboard(onboard)
-  console.log(onboard)
-  }, [onboard])
+  // useEffect(() => {
+  //   const onboard = sessionStorage.getItem('onboard')
+  //   setOnboard(onboard)
+  // console.log(onboard)
+  // }, [onboard])
  
  
 
@@ -45,18 +45,18 @@ function App() {
         </Routes>
         </>
         : 
-        onboard ? 
+        // onboard ? 
         <Routes>
          <Route exact path="/" element={<Home />} />
          <Route exact path="/home" element={<Home />} />
          <Route exact path="/login" element={<Login/>} />
            <Route exact path="/level/:level" element={<Books />} />
            <Route exact path="*" element={<Home />}/>
-         </Routes>
+         {/* </Routes>
          :
-         <Routes>
-           <Route exact path="/" element={<Onboard/>} />
-           <Route exact path="*" element={<Onboard/>} />
+         <Routes> */}
+           <Route exact path="/onboard" element={<Onboard/>} />
+           {/* <Route exact path="*" element={<Onboard/>} /> */}
          </Routes>
 }
      </Router>
