@@ -10,6 +10,10 @@
     align-items: center;
 }
 
+.adminBg{
+    background-color: #1E1E1E;
+    height: 100vh;
+}
 
 /* .bookList, */
 .blogPost {
@@ -19,9 +23,8 @@
     /* padding-bottom: 40px; */
 }
     
-.bookList{
-    padding-top: 40px;
-    padding-bottom: 40px;
+.homePage{
+    padding: 40px 16px 0;
 }
 .blogPost {
     max-width: 757px;
@@ -63,8 +66,9 @@
 .bookCard, .tabs {
     width: 100%;
     margin: 0 0 32px;
-    padding: 12px 0;
+    /* padding: 12px 0; */
     display: flex;
+    align-items: center;
     justify-content: space-between;
 color: white;
 }
@@ -101,6 +105,16 @@ align-items: center;
     align-items: center;
     border-radius: 100%;
     background-color: #E8E8E8;
+}
+
+.deleteBook{
+    padding: 16px;
+background-color: white;
+border: #970E0E solid 0.5px;
+color: #970E0E;
+cursor: pointer;
+margin: 0;
+height: fit-content;
 }
 .blogContent p img{
     width: 100%;

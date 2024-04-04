@@ -24,11 +24,11 @@ const AdminHome = () => {
     <div className="container">
       <Head title="Lasu Books" />
       <button onClick={() => {
-          navigate('/createpost');
+          navigate('/addbook');
         }}
         className="createButton btn search_btn"
       >
-        Create post
+        Add Book
       </button>
      
       <Content levelpage="adminlevel"/>

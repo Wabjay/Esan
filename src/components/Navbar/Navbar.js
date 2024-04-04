@@ -1,4 +1,4 @@
-import Sch_logo from "../../images/sch_logo.jpg";
+import Sch_logo from "../../images/logo.jpg";
 import "./Navbar.css"
 import { Link } from "react-router-dom";
 import { auth, logout } from "../../firebase-config";
@@ -20,11 +20,11 @@ const Navbar = () => {
             <div className="navbar_content">
                   <>
                     <Link to="/admin">
-                    <img src={Sch_logo} alt="" />
+                    <img src={Sch_logo} className="logo" alt="" />
                   </Link>
                   <div className="nav_links">
                   <ul className="logout">
-                    <li>
+                    <li className="logoff">
                       <p onClick={logoff}> Log Out</p></li>
                   </ul>
                 </div></> 

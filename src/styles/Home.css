@@ -11,11 +11,21 @@
         padding: 100px 24px;
     }
 
-.explore_text{
+    .explore_text {
+        margin-bottom: 40px;
+    }
+.explore_text p{
     color: #FEFEFE;
     display: block;
-
+font-size: 29px;
+font-weight: 700;
+line-height: 37px;
+margin: 0;
 }
 .explore_text span{
-    display: block;
+    font-weight: 400;
+}
+
+.explore_text .green{
+    color: #CFFF11;
 }

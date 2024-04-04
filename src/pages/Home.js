@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { HeadProvider as Head } from "react-head";
 import Content from "../components/Content/Content";
-import SearchBox from "../components/SearchBox";
 import "./../styles/Home.css"
+import Logo from '../images/esan_logo.svg'
 
 
 const Home = () => {
@@ -14,10 +14,13 @@ const Home = () => {
     <div className="home_container" style={{ backgroundColor: '#1E1E1E' }}>
       <div>
         
-      <Head title="Lasu Books" />
-      <img src="" alt=""/>
-      <p className="explore_text">Explore ESAN - LASU </p>
-      <p className="explore_text">Library 🔥</p>
+      <Head title="Esan Books" />
+      <img src={Logo} alt="Esan Logo" style={{marginBottom: "40px", marginTop: "-60px"}}/>
+        
+      <div className="explore_text">
+      <p><span>Explore</span> ESAN - LASU </p>
+      <p className="green">Library 🔥</p>
+      </div>
       {/* <SearchBox /> */}
       <Content levelpage="level"/>
     

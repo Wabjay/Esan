@@ -3,7 +3,8 @@
 }
 
 .container {
-    background: white;
+    background: #1E1E1E;
+    height: 100vh;
 }
 
 .add_book{
@@ -16,6 +17,7 @@
     color: #FFFFFF;
     padding: 8px 16px;
     border: none;
+    border-radius: 5px;
     background-color: var(--blue-500);
 }
 

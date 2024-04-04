@@ -27,10 +27,10 @@ const Onboard = () => {
         <img src={OnboardImg} className="onboarding-image"/>
       </div>
       <div className="started">
-        <p className="napher">NAPHER-SD HKSHE</p>
-        <p  className="napher_small">Learn with plaesure with us. wherever you are!</p>
-        <Link to="/home">
-          <button className="center" onClick={nav}>GET STARTED</button>
+        <p className="esan">Enhance <span>Learning Through</span> Seamless <span className="green">BOOKs</span></p>
+        {/* <p  className="napher_small">Learn with plaesure with us. wherever you are!</p> */}
+        <Link to="/home" className="center"  onClick={nav}>
+          Enter to Experience
           </Link>
   
 
