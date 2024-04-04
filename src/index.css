@@ -2,7 +2,7 @@
 @font-face {
   font-family: "Space";
   src: local("Space"),
-   url("./components/font/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
+   url("./font/SpaceGrotesk-VariableFont_wght.ttf") format("truetype");
   font-weight: normal;
   font-display: swap
  }
