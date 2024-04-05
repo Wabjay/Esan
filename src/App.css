@@ -26,18 +26,12 @@
   --blue-100: #A9C2DD;
   --blue-50: #CCDBEB;
   --blue-10: #F1F5F9;
-
   }
   *{
-    /* margin: 0; */
     padding: 0;
     box-sizing: border-box;
     font-family: 'Space' !important
   }
-
-  /* p{
-    margin-bottom: 0;
-  } */
 
 .faq_btn {
   font-style: normal;

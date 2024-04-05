@@ -3,8 +3,7 @@ import { getDocs, collection, deleteDoc, doc, orderBy, query} from "firebase/fir
 import { auth, db } from "../firebase-config";
 import { Modal } from "antd";
 import {useNavigate, Link} from "react-router-dom"
-// import { TailSpin } from 'react-loader-spinner'
-import { useParams } from 'react-router-dom';
+ import { useParams } from 'react-router-dom';
 import { useAuthState } from "react-firebase-hooks/auth";
 import "../components/Bookcard/BookCard.css"
 
@@ -19,7 +18,6 @@ function AdminBook({ isAuth }) {
 
   const [user, error] = useAuthState(auth);
   useEffect(() => {
-    // if (!user) navigate("/")
     !user && navigate("/")
   }, [user]);
 
@@ -40,7 +38,6 @@ function AdminBook({ isAuth }) {
               console.log(error)
             });
         } finally {
-          // setLoading(false);
         }
       },
       onCancel() { },
@@ -48,16 +45,6 @@ function AdminBook({ isAuth }) {
     
   };
 
-  // useEffect(() => {
-  //   const getPosts = async () => {
-  //     const data = await getDocs(postsCollectionRef);
-  //     setPostList(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-  //     setPostList(data.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
-  //     setIsLoading(false)
-  //   };
-
-  //   getPosts();
-  // }, [deletePost]);
 
   useEffect(() => {
     const getPosts = async () => {

@@ -40,7 +40,7 @@ text-align: center;
 }
 .onboarding_container .center{
         width: fit-content;
-        position: fixed;
+        position: absolute;
         bottom: 3%;
         left: 27%;
         padding: 16px;
