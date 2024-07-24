@@ -14,7 +14,12 @@ function AdminBook({ isAuth }) {
   const [isLoading, setIsLoading] = useState(true);
   const [postLists, setPostList] = useState([]);
   const [showLists, setShowList] = useState([]);
-  const postsCollectionRef =collection(db, "posts")
+  const postsCollectionRef = collection(db, "posts");
+  const questionsCollectionRef = collection(db, "questions");
+  const [showQuestionLists, setShowQuestionList] = useState([]);
+  const [showPostLists, setShowPostList] = useState([]);
+  const [questionLists, setQuestionList] = useState([]);
+  const [tab, setTab] = useState('courses');
 
   const [user, error] = useAuthState(auth);
   useEffect(() => {
@@ -48,17 +53,20 @@ function AdminBook({ isAuth }) {
 
   useEffect(() => {
     const getPosts = async () => {
-      const data = await getDocs(postsCollectionRef);
-      setPostList(data.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
-      setShowList(data.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
-      // data.docs.map((doc) =>  doc.data().level === pathlevel && console.log(doc.data()));
-      //   console.log(data.docs)/
-      // console.log(postLists)
-      setIsLoading(false)
+      const postData = await getDocs(postsCollectionRef);
+      const questionData = await getDocs(questionsCollectionRef);
+      setPostList(postData.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
+      setQuestionList(questionData.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
+      
+      // Initial Books to show 
+      setShowPostList(postData.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
+      setShowQuestionList(questionData.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
+      
+      setIsLoading(false);
       // setIsLoading(false)
     };
 
-   
+    
 
     getPosts();
   }, [pathlevel, deletePost]);
@@ -69,9 +77,14 @@ function AdminBook({ isAuth }) {
   return (
     <div className="adminBg">
       <div className="bookList_banner"><p>{path.level} level Books</p></div>
-
+      <div className={`tabs`}>
+  <p onClick={()=> setTab('courses')} className={`${tab === 'courses' && 'active'}`}>General Courses</p>
+  <p onClick={()=> setTab('questions')} className={`${tab === 'questions' && 'active'}`}>Past Question</p>
+</div>
       <div className="homePage blogList">
-        {showLists.map((post) => (
+      {
+  tab === 'courses'? 
+  showPostLists.map((post) => (
           post.level === pathlevel &&
           <div className="bookCard">
             {/* <img src={post.pdf} alt="" className="blogList_img" /> */}
@@ -86,9 +99,25 @@ function AdminBook({ isAuth }) {
               Delete
             </p>
           </div>
+        )
+        ) :
+        showQuestionLists.map((post) => (
+          post.level === pathlevel &&
+          <div className="bookCard">
+            {/* <img src={post.pdf} alt="" className="blogList_img" /> */}
 
+            <p className="book">{post.courseCode}</p>
+
+            <p className="deleteBook"
+              onClick={() => {
+                deletePost(post.id);
+              }}
+            >
+              Delete
+            </p>
+          </div>
         )
-        )
+      )
         }
 
       </div>

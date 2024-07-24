@@ -11,6 +11,7 @@ import AdminBook from "./pages/AdminBook";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { auth } from "./firebase-config";
 import Onboard from "./pages/Onboard";
+import CreateQuestion from "./pages/CreateQuestion";
 
 function App() {
   const [user, error] = useAuthState(auth);
@@ -28,6 +29,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<AdminHome />} />
               <Route exact path="/addbook" element={<CreatePost />} />
+              <Route exact path="/addquestion" element={<CreateQuestion />} />
               <Route exact path="/admin" element={<AdminHome />} />
               <Route exact path="/adminlevel/:level" element={<AdminBook />} />
               <Route exact path="*" element={<AdminHome />} />

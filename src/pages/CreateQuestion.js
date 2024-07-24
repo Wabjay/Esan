@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import React, { useState, useEffect } from "react";
 import "./../components/Forms/Forms.css"
 import { Timestamp, addDoc, collection } from "firebase/firestore";
@@ -8,7 +10,7 @@ import { Progress, Form, Upload, Button, Input, Radio, RadioChangeEvent } from "
 import Image from "../images/back_icon.png"
 import { useAuthState } from "react-firebase-hooks/auth";
 
-function CreatePost({ isAuth }) {
+function CreateQuestion({ isAuth }) {
   const [loading, setLoading] = useState(false);
   let navigate = useNavigate();
 
@@ -30,6 +32,7 @@ function CreatePost({ isAuth }) {
 
   const [progress, setProgress] = useState(0);
 
+
   const handleImageChange = (e) => {
     setFormData({ ...formData, pdf: e.file });
     console.log(e.file)
@@ -46,7 +49,7 @@ function CreatePost({ isAuth }) {
     setLoading(true)
     const storageRef = ref(
       storage,
-      `/pdf/${Date.now()}${formData.pdf.name}`
+      `/question/${Date.now()}${formData.pdf.name}`
     );
 
     const uploadImage = uploadBytesResumable(storageRef, formData.pdf);
@@ -66,15 +69,15 @@ function CreatePost({ isAuth }) {
         setLoading(false)
 
         setFormData({
-          pdf: "",
+          question: "",
         });
 
         const current = new Date();
         const date = `${current.getDate()}/${current.getMonth() + 1}/${current.getFullYear()}`;
 
         getDownloadURL(uploadImage.snapshot.ref).then((url) => {
-          const postsCollectionRef = collection(db, "posts");
-          addDoc(postsCollectionRef, {
+          const questionsCollectionRef = collection(db, "questions");
+          addDoc(questionsCollectionRef, {
             courseCode: value.CourseCode,
             level: levels,
             pdf: url,
@@ -82,7 +85,7 @@ function CreatePost({ isAuth }) {
           })
             .then(() => {
               navigate("/");
-              console.log(postsCollectionRef)
+              console.log(questionsCollectionRef)
             })
             .catch((err) => {
               // toast("Error adding article", { type: "error" });
@@ -102,7 +105,7 @@ function CreatePost({ isAuth }) {
           onClick={() => navigate('/admin')}>
           <img src={Image} alt="" /> <p>Back</p> </button>
 
-        <h1 className="add_book">Add a book</h1>
+        <h1 className="add_book">Add Past Question</h1>
 
 
         <Form
@@ -188,4 +191,4 @@ function CreatePost({ isAuth }) {
   );
 }
 
-export default CreatePost;
+export default CreateQuestion;

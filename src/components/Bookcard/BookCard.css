@@ -3,7 +3,7 @@
     width: 60px;
     height: 80px;
     padding: 25px 15px;
-    margin-bottom: 40px;
+    /* margin-bottom: 40px; */
     border-radius: 50px;
     display: flex;
     justify-content: center;
@@ -13,6 +13,11 @@
 .adminBg{
     background-color: #1E1E1E;
     height: 100vh;
+}
+.adminBg > div{
+    margin: 0 auto;
+    width: 100%;
+    max-width: 425px;
 }
 
 /* .bookList, */
@@ -81,17 +86,25 @@ color: white;
     font-weight: 400;
     color: #FEFEFE;
     font-size: 14px;
-    padding: 4px 12px;
+    padding: 8px 12px;
     border-radius: 90px;
-    background-color: #7B7B7B;
+    background-color: #0a0a0a;
+
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .tabs p:hover, .tabs .active{
-    background-color: #E69800;
+    background-color: #413e3e;
+    cursor: pointer;
 }
 
 p.book{
-width: 145px;
+min-width: 145px;
+font-family: 500;
+padding: 8px 12px;
 height: 43px;
 display: flex;
 justify-content: center;
@@ -185,9 +198,12 @@ height: fit-content;
 }
 
 /* Admin Post page */
+.createButton-div{
+padding-top: 24px;
+}
 .createButton{
-    width: 150px;
-    margin: 40px 16px;
+    width: fit-content;
+    margin: 16px;
     /* margin: 0 auto; */
 }
 

@@ -7,16 +7,22 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { HeadProvider as Head } from "react-head";
 import SearchBox from "../components/SearchBox";
 import Button from './../images/back.png'
+import Profile from '../images/White.png'
 
 import Search from "./../images/search-black.png"
 import './../styles/SearchBox.css'
+import Loader from "../components/Loader";
 
 function Books() {
   const [isLoading, setIsLoading] = useState(true);
+  const [color, setColor] = useState("");
   const [postLists, setPostList] = useState([]);
-  const [showLists, setShowList] = useState([]);
+  const [showQuestionLists, setShowQuestionList] = useState([]);
+  const [showPostLists, setShowPostList] = useState([]);
+  const [questionLists, setQuestionList] = useState([]);
   const [tab, setTab] = useState('courses');
   const postsCollectionRef = collection(db, "posts");
+  const questionsCollectionRef = collection(db, "questions");
   const [searchQuery, setSearchQuery] = useState('');
 
   // const orders = orderBy("post", "desc")
@@ -25,30 +31,22 @@ function Books() {
   const pathlevel = path.level + "l";
 
   useEffect(() => {
+    setColor(pathlevel === "100l" ? "#ffb21d" : pathlevel === "200l" ? "#c9da3e" : pathlevel === "300l" ? "#73ccd7" : "#273360")
     const getPosts = async () => {
-      const data = await getDocs(postsCollectionRef);
-      setPostList(data.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
-      setShowList(data.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
-      // data.docs.map((doc) =>  doc.data().level === pathlevel && console.log(doc.data()));
+      const postData = await getDocs(postsCollectionRef);
+      const questionData = await getDocs(questionsCollectionRef);
+      setPostList(postData.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
+      setQuestionList(questionData.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
+
+      // Initial Books to show 
+      setShowPostList(postData.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
+      setShowQuestionList(questionData.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
+
       //   console.log(data.docs)/
       // console.log(postLists)
-      setIsLoading(false)
+      setIsLoading(false);
       // setIsLoading(false)
     };
-
-    //   getPosts();
-    // }, []);
-
-
-    // const getPosts = async () => {
-    //   const data = await getDocs(postsCollectionRef);
-    //   setPostList(data.docs.map((doc) => (doc.data().level === pathlevel && { ...doc.data(), id: doc.id })));
-    //      data.docs.map((doc) => console.log(doc.data().level));
-
-    // //   console.log(data.docs)/
-    //   console.log(postLists)
-    //   setIsLoading(false)
-    // }
 
     getPosts();
     // console.log(postLists)
@@ -64,87 +62,92 @@ function Books() {
     const searchQuery = e.target.value
     setSearchQuery(searchQuery)
 
-    const searchFrom = postLists.filter((doc) =>  doc.level === pathlevel && doc.courseCode.toLowerCase().includes(searchQuery.toLowerCase()))
-  
-    console.log(searchFrom)
-    // // Filter posts based on search query
-    // const filteredPosts = postLists.filter(doc =>
-    //  doc.title.includes(searchQuery)
-    // );
-  
+    const searchFrom = postLists.filter((doc) => doc.level === pathlevel && doc.courseCode.toLowerCase().includes(searchQuery.toLowerCase()))
+    const searchQuestion = questionLists.filter((doc) => doc.level === pathlevel && doc.courseCode.toLowerCase().includes(searchQuery.toLowerCase()))
+
+
     // Update state with filtered posts
-    setShowList(searchFrom);
-  
+    setShowPostList(searchFrom);
+    setShowQuestionList(searchQuestion);
+
     // Log filtered posts
     // filteredPosts.map(doc => console.log(doc.data()));
-  
+
     setIsLoading(false);
   };
 
   const showResults = (response) => {
-console.log(response)  };
+    console.log(response);
+  };
 
 
   return (
     <>
       <Head title="Lasu Books" />
-      {isLoading ? <div className="Bookspinner">
-        <TailSpin
-          height="80"
-          width="80"
-          color="#214973"
-          ariaLabel="tail-spin-loading"
-          radius="1"
-          wrapperStyle={{}}
-          wrapperClass=""
-          visible={true}
-        /></div> : (
-      
+      {isLoading ?
+        <Loader bgcolor={color} />
+        : (
+
           <div className="bookList_banner" style={{ background: pathlevel === "100l" ? "#ffb21d" : pathlevel === "200l" ? "#c9da3e" : pathlevel === "300l" ? "#73ccd7" : "#273360" }}>
             <div className="">
-            <img src={Button} alt=""  className="backbutton" onClick={goBack}/>
+              <div style={{ height: "fit-content", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+                <img src={Button} alt="" className="backbutton" onClick={goBack} />
+                <img src={Profile} alt="Profile" style={{ width: "142px", height: "50px" }} />
+              </div>
               <p>{path.level} Level </p>
 
               {/* <SearchBox search={showResults} /> */}
 
 
               <div className='searchbox'>
-      <img src={Search} alt=""/>
-      <input  type="text"
-        value={searchQuery}
-        onChange={handleSearch}/>
-    </div>
-<div className={`tabs`}>
-  <p onClick={()=> setTab('courses')} className={`${tab === 'courses' && 'active'}`}>General Courses</p>
-  <p onClick={()=> setTab('questions')} className={`${tab === 'questions' && 'active'}`}>Past Question</p>
-</div>
-{
-  tab === 'courses'? 
-              <div className="bookList">
-                {showLists?.map((post) => (
-                  post.level === pathlevel &&
-                  // return (
-                  <>
-                    <BlogCard
-                      pics={post.pdf}
-                      id={post.id}
-                      content={post.courseCode}
-                      author={post.CourseTitle}
-                    />
-                  </>)
-                  //    )}
-                )}
-              </div> :
-              <div>
-
+                <img src={Search} alt="" />
+                <input type="text"
+                  value={searchQuery}
+                  onChange={handleSearch} />
               </div>
-}
+              <div className={`tabs`}>
+                <p onClick={() => setTab('courses')} className={`${tab === 'courses' && 'active'}`}>General Courses</p>
+                <p onClick={() => setTab('questions')} className={`${tab === 'questions' && 'active'}`}>Past Question</p>
+              </div>
+              {
+                tab === 'courses' ?
+                  <div className="bookList">
+                    {showPostLists?.map((post) => (
+                      post.level === pathlevel &&
+                      // return (
+                      <>
+                        <BlogCard
+                          pics={post.pdf}
+                          id={post.id}
+                          content={post.courseCode}
+                          author={post.CourseTitle}
+                        />
+                      </>)
+                      //    )}
+                    )}
+                  </div> :
+                  <div className="bookList">
+                    {showQuestionLists?.map((post) => (
+                      post.level === pathlevel &&
+                      // return (
+                      <>
+                        <BlogCard
+                          pics={post.pdf}
+                          id={post.id}
+                          content={post.courseCode}
+                          author={post.CourseTitle}
+                        />
+                      </>)
+                      //    )}
+                    )}
+                  </div>
+              }
 
             </div>
 
           </div>
-      
-      )}
+
+        )}
     </>
   );
 }
