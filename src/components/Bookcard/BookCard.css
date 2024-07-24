@@ -199,6 +199,7 @@ height: fit-content;
 
 /* Admin Post page */
 .createButton-div{
+    text-align: center;
 padding-top: 24px;
 }
 .createButton{
