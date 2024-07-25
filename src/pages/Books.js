@@ -3,7 +3,7 @@ import { getDocs, collection } from "firebase/firestore";
 import { db } from "../firebase-config";
 import BlogCard from "../components/Bookcard/BookCard";
 import Loader from "../components/Loader";
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { HeadProvider as Head } from "react-head";
 import Search from "./../images/search-black.png";
 import Button from './../images/back.png';
@@ -102,7 +102,7 @@ function Books() {
           <div>
             <div style={{ height: "fit-content", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <img src={Button} alt="Back" className="backbutton" onClick={goBack} />
-              <img src={Profile} alt="Profile" style={{ width: "142px", height: "50px" }} />
+              <Link to='/'><img src={Profile} alt="Profile" style={{ width: "142px", height: "50px" }} /></Link>
             </div>
             <p>{path.level} Level </p>
 
