@@ -44,7 +44,12 @@ function Books() {
           setQuestionList(questions);
           setShowPostList(posts.filter(post => post.level === pathlevel));
           setShowQuestionList(questions.filter(question => question.level === pathlevel));
-          setIsLoading(false);
+          
+          // Set a timeout to update setIsLoading to false after 3 seconds
+          setTimeout(() => {
+            setIsLoading(false);
+          }, 3000);
+          
           return;
         }
       }
