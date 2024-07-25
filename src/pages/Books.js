@@ -102,7 +102,7 @@ function Books() {
           <div>
             <div style={{ height: "fit-content", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
               <img src={Button} alt="Back" className="backbutton" onClick={goBack} />
-              <Link to='/'><img src={Profile} alt="Profile" style={{ width: "142px", height: "50px" }} /></Link>
+              <Link to='/home'><img src={Profile} alt="Profile" style={{ width: "142px", height: "50px" }} /></Link>
             </div>
             <p>{path.level} Level </p>
 

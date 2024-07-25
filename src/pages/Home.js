@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { HeadProvider as Head } from "react-head";
 import Content from "../components/Content/Content";
 import "./../styles/Home.css"
-import Logo from '../images/esan_logo.svg'
+import Logo from '../images/esan_logo.webp'
 import Profile from '../images/White.webp'
 
 

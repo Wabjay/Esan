@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import { HeadProvider as Head } from "react-head";
 import { Link, useNavigate } from "react-router-dom";
-import OnboardImg from '../images/onboard.png'
+import OnboardImg from '../images/onboard.webp'
 import "../styles/onboarding.css";
 
 import Indicator from '../images/HomeIndicator.png'
