@@ -22,6 +22,7 @@ height: 40px;
   width: 100%;
   max-width: 425px;
   height: inherit;
+  margin: 0 auto;
 }
 
 #navbar .logoff {

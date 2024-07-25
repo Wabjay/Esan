@@ -5,6 +5,7 @@ import { Modal } from "antd";
 import { useNavigate, useParams } from 'react-router-dom';
 import { useAuthState } from "react-firebase-hooks/auth";
 import "../components/Bookcard/BookCard.css";
+import Button from './../images/back.png';
 
 function AdminBook({ isAuth }) {
   let navigate = useNavigate();
@@ -69,9 +70,14 @@ function AdminBook({ isAuth }) {
     getData();
   }, [pathlevel]);
 
+  const goBack = () => {
+    navigate(-1);
+  };
   return (
     <div className="adminBg">
-      <div className="bookList_banner"><p>{path.level} level Books</p></div>
+      <div className="bookList_banner"  style={{ height: "fit-content", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
+      <img src={Button} alt="Back" className="backbutton" onClick={goBack} />
+        <p  style={{ textAlign: "right"}}>{path.level} level Books</p></div>
       <div className={`tabs`}>
         <p onClick={() => setTab('courses')} className={`${tab === 'courses' && 'active'}`}>General Courses</p>
         <p onClick={() => setTab('questions')} className={`${tab === 'questions' && 'active'}`}>Past Questions</p>
