@@ -7,7 +7,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { HeadProvider as Head } from "react-head";
 import Search from "./../images/search-black.png";
 import Button from './../images/back.png';
-import Profile from '../images/White.png';
+import Profile from '../images/White.webp';
 import './../styles/SearchBox.css';
 
 const CACHE_DURATION = 48 * 60 * 60 * 1000; // 48 hours in milliseconds

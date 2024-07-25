@@ -1,10 +1,9 @@
 
 import React from "react";
-import level1 from "../../images/100level.svg"
-import level2 from "../../images/200level.svg"
-import level3 from "../../images/300level.svg"
-import level4 from "../../images/400level.svg"
-import View from "../../images/view.svg"
+import level1 from "../../images/100level.webp"
+import level2 from "../../images/200level.webp"
+import level3 from "../../images/300level.webp"
+import level4 from "../../images/400level.webp"
 // import Door_step from "../../images/door_step.png"
 import "./Content.css"
 import { Link } from "react-router-dom";

@@ -3,7 +3,7 @@ import { HeadProvider as Head } from "react-head";
 import Content from "../components/Content/Content";
 import "./../styles/Home.css"
 import Logo from '../images/esan_logo.svg'
-import Profile from '../images/White.png'
+import Profile from '../images/White.webp'
 
 
 const Home = () => {
